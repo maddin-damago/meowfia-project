@@ -1,0 +1,177 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  max-width: 1920px;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+nav,
+#hero {
+  background-color: rgb(6, 29, 19);
+  color: white;
+}
+
+nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Comic Sans MS";
+}
+
+h1 {
+  font-family: "Comic Sans MS";
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(6, 29, 19);
+}
+
+#logo img {
+  margin-left: 10px;
+  width: 60px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+#logo-text {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#navigation ul {
+  display: flex;
+  gap: 30px;
+  margin-right: 50px;
+}
+
+#hero p {
+  margin: 1rem 0;
+  width: 60ch;
+}
+#hero-container {
+  position: relative;
+  z-index: 657;
+  max-width: 1920px;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+#hero {
+  position: relative;
+  height: 250px;
+  padding: 40px;
+}
+
+#hero-right {
+  background-color: rgb(6, 29, 19);
+}
+
+#hero-right img {
+  height: 250px;
+  width: 100%;
+}
+
+#cat-hero1,
+#cat-hero2,
+#cat-hero3 {
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  opacity: 0.1;
+  object-fit: cover;
+}
+
+#cat-hero1 {
+  mix-blend-mode: difference;
+  box-shadow: 0 0 100px purple;
+}
+
+#cat-hero2 {
+  mix-blend-mode: hard-light;
+}
+
+#cat-hero3 {
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+}
+
+#content-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 2rem auto;
+  width: 93.5%;
+}
+
+#content-top button,
+a {
+  background-color: rgb(38, 71, 57);
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+#members-section {
+  background-color: rgb(243, 243, 243);
+  padding: 30px;
+  height: 100vw;
+}
+
+#members {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.member-card {
+  width: 80%;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(71, 92, 37, 0.3);
+}
+
+.member-card img {
+  background-color: rgba(7, 85, 59, 0.453);
+  width: 70px;
+  padding: 7px;
+  border-radius: 50%;
+  border: 1px solid black;
+}

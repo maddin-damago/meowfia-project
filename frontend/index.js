@@ -1,9 +1,11 @@
 "use strict";
 
-const membersListEl = document.getElementById("members-section");
+const membersListEl = document.getElementById("members");
+const mitgliederHeadline = document.getElementById("mitglieder");
 
 document.addEventListener("DOMContentLoaded", async () => {
   const cats = await getMeowfiaMembers();
+  mitgliederHeadline.textContent = "Mitglieder (" + cats.length + ")";
   for (let i = 0; i < cats.length; i++) {
     const { catName, catRank, catSpecialty, catStatus, catAvatar } = cats[i];
     const memberCardEl = document.createElement("div");
