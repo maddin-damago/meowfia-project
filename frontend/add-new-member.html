@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shorthand icon" href="#" />
+    <title>Add New Member</title>
+  </head>
+  <body>
+    <nav>
+      <section id="logo">
+        <img src="#" alt="asd" />
+        Cat Mafia
+      </section>
+      <section id="navigation">
+        <ul>
+          <li>Mitglieder</li>
+          <li>Neues Mitglied</li>
+        </ul>
+      </section>
+      <span>paw</span>
+    </nav>
+    <main>
+      <section id="hero">
+        <h1>Unsere Mafia-Katzen</h1>
+        <p>Starke Charaktere. Klare Aufgaben. Ein Ziel</p>
+        <p>
+          Hier findest Du alle Mitglieder der Cat Mafia - von den treuen
+          Gefolgsleuten bis hin zu den einflussreichen Kapitänen.
+        </p>
+      </section>
+      <form action="#">
+        <h2>Mitgliedsdaten</h2>
+        <div>
+          <label for="cat-name">Name </label>
+          <input
+            type="text"
+            id="cat-name"
+            name="cat-name"
+            placeholder="z.B. Big Meowski"
+            required
+          />
+        </div>
+        <div>
+          <label for="cat-rank">Rang </label>
+          <select name="cat-rank" id="cat-rank" required>
+            <option value="">--</option>
+            <option value="underboss">Underboss</option>
+            <option value="don">Don</option>
+            <option value="soldier">Soldier</option>
+            <option value="enforcer">Enforcer</option>
+            <option value="made-cat">Made Cat</option>
+            <option value="catsociate">Catsociate</option>
+          </select>
+        </div>
+        <div>
+          <label for="cat-specialty">Spezialgebiet </label>
+          <input
+            type="text"
+            id="cat-specialty"
+            name="cat-specialty"
+            placeholder="z.B. Finanzen, Spionage, Logistik..."
+          />
+          <span>Optional - kann später eingegeben werden</span>
+        </div>
+        <button type="submit" id="add-member-button">Mitglied anlegen</button>
+      </form>
+      <div id="form-warning"></div>
+    </main>
+    <script type="module" src="./add-new-member.js"></script>
+  </body>
+</html>
