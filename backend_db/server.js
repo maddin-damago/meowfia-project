@@ -5,7 +5,7 @@ import { router } from "./router/router.js";
 
 process.loadEnvFile(".env");
 
-const PORT = process.env.BACKEND_PORT;
+const PORT = process.env.DB_BACKEND_PORT;
 
 const app = express();
 

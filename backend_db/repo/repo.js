@@ -43,3 +43,24 @@ export async function getAllGebiete() {
     conn.release();
   }
 }
+
+// POST
+
+export async function createNewCat(cat) {
+  const [result] = await pool.execute(
+    "INSERT INTO katze (cat_name, cat_rank_id, cat_status) VALUES (:name, :cat_rank_id, 1)",
+    cat,
+  );
+  console.log(result);
+  return result;
+}
+
+export async function createNewClan(data) {
+  const conn = await pool.getConnection();
+  try {
+    await conn.beginTransaction();
+    const [catResult] = createNewCat(data.cat);
+
+    await conn.commit();
+  } catch {}
+}
