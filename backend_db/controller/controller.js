@@ -6,6 +6,7 @@ import {
   allGebiete,
   createNewDon,
   createNewClan,
+  clanById,
 } from "../service/service.js";
 
 export async function getCats(req, res) {
@@ -21,6 +22,14 @@ export async function getClans(req, res) {
 export async function getGebiete(req, res) {
   const gebiete = await allGebiete();
   res.status(200).json(gebiete);
+}
+
+// Get By Id
+
+export async function getClanById(req, res) {
+  const id = req.params.id;
+  const clan = await clanById(id);
+  res.status(200).json(clan);
 }
 
 // POST

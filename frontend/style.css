@@ -13,6 +13,11 @@ body {
   margin: auto;
 }
 
+h3 {
+  font-size: 16px;
+  margin-bottom: 0.3rem;
+}
+
 li {
   list-style: none;
 }
@@ -174,4 +179,60 @@ a {
   padding: 7px;
   border-radius: 50%;
   border: 1px solid black;
+}
+
+/* Gebiete Seite*/
+
+.gebiet-card {
+  background-image: url("./assets/hero-bg.png");
+  width: 200px;
+  height: 150px;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 7px rgb(13, 30, 13);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-shadow: 1px 1px 1px black;
+  border: 1px solid rgb(16, 101, 16);
+  cursor: pointer;
+}
+
+.clan-badge {
+  margin-top: 0.4rem;
+  padding: 5px;
+  background-color: blueviolet;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.gebiet-card:hover {
+  animation: gebhover 0.1s ease-in-out forwards;
+}
+
+@keyframes gebhover {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.03);
+    box-shadow: 12px 12px 9px rgb(13, 30, 13);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 15px 15px 11px rgb(13, 30, 13);
+  }
+
+  75% {
+    transform: scale(1.03);
+    box-shadow: 12px 12px 9px rgb(13, 30, 13);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

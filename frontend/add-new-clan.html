@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shorthand icon" href="#" />
+    <title>Add New Member</title>
+  </head>
+  <body>
+    <nav>
+      <section>
+        <a id="logo" href="./index.html">
+          <img src="https://robohash.org/Hans.png?set=set4" alt="asd" />
+          <span id="logo-text">Cat Mafia</span>
+        </a>
+      </section>
+      <section id="navigation">
+        <ul>
+          <li>Mitglieder</li>
+          <li>Neues Mitglied</li>
+        </ul>
+      </section>
+    </nav>
+    <main>
+      <section id="hero-container">
+        <div id="hero">
+          <h1>Unsere Mafia-Katzen</h1>
+          <p>Starke Charaktere. Klare Aufgaben. Ein Ziel.</p>
+          <p>
+            Hier findest Du alle Mitglieder der Cat Mafia - von den treuen
+            Gefolgsleuten bis hin zu den einflussreichen Kapitänen.
+          </p>
+        </div>
+        <div id="hero-right">
+          <img src="./assets/hero-bg.png" id="cat-hero1" alt="asd2" />
+          <img src="./assets/hero-bg.png" id="cat-hero2" alt="awd" />
+          <img src="./assets/hero-bg.png" id="cat-hero3" alt="awd" />
+        </div>
+      </section>
+      <form action="#">
+        <h2>Mitgliedsdaten</h2>
+        <div>
+          <label for="cat-name">Cat Name </label>
+          <input
+            type="text"
+            id="cat-name"
+            name="cat-name"
+            placeholder="z.B. Big Meowski"
+            required
+          />
+        </div>
+        <div>
+          <label for="clan-name">Clan Name </label>
+          <input
+            type="text"
+            id="clan-name"
+            name="clan-name"
+            placeholder="z.B. The Purrminators"
+            required
+          />
+        </div>        
+        <button type="submit" id="add-member-button">Clan anlegen</button>
+      </form>
+      <div id="form-warning"></div>
+    </main>
+    <script type="module" src="./add-new-clan.js"></script>
+  </body>
+</html>
