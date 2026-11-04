@@ -20,7 +20,15 @@ export async function getAllClans() {
   const conn = await pool.getConnection();
 
   try {
-    const res = await conn.query("SELECT * FROM clan");
+    const res = await conn.query(`SELECT 
+      	                            c.id,
+                                    c.clan_name, 
+                                    k.cat_name AS don, 
+                                    c.fische, 
+                                    (SELECT COUNT(*) FROM katze m WHERE m.clan_id = c.id) AS members,
+                                    (SELECT COUNT(*) FROM gebiete gb WHERE gb.clan_id = c.id) AS gebiete
+                                    FROM clan c
+                                    LEFT JOIN katze k ON k.id = c.don_id;`);
     const [rows] = res;
     return rows;
   } catch (error) {

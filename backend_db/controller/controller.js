@@ -32,6 +32,26 @@ export async function getClanById(req, res) {
   res.status(200).json(clan);
 }
 
+// COOKIES NOM NOM
+
+export function setGebietCookie(req, res) {
+  const id = req.params.id;
+  res.cookie("gebiet", id, {
+    partitioned: true,
+    secure: true,
+  });
+  res.sendStatus(200);
+}
+
+export function setClanCookie(req, res) {
+  const id = req.params.id;
+  res.cookie("clan", id, {
+    partitioned: true,
+    secure: true,
+  });
+  res.sendStatus(200);
+}
+
 // POST
 
 export async function createDon(req, res) {
@@ -42,4 +62,12 @@ export async function createDon(req, res) {
 export async function createClan(req, res) {
   const result = await createNewClan(req.body);
   res.status(201).json(result);
+}
+
+// SET
+
+export async function setGebiet(req, res) {
+  const id = req.params.id;
+  console.log(id);
+  console.log(req.body.value);
 }

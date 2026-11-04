@@ -27,17 +27,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     gebietDataContainer.append(gebietClan);
 
     membersListEl.append(gebietDataContainer);
+
+    const cookie = await cookieStore.get("clan");
+    const cookieValue = cookie.value;
+
+    gebietDataContainer.addEventListener("click", async () => {
+      await fetch(`http://127.0.0.1:1234/api/v1/gebiete/${gebiete[i].id}`, {
+        method: "PUT",
+        body: JSON.stringify(cookie),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    });
   }
 });
 
 async function getMeowfiaRegions() {
-  const response = await fetch("http://localhost:1234/api/v1/gebiete");
+  const response = await fetch("http://127.0.0.1:1234/api/v1/gebiete");
   return response.json();
 }
 
 async function getMeowfiaClanById(id) {
   if (id) {
-    const response = await fetch(`http://localhost:1234/api/v1/clan/${id}`);
+    const response = await fetch(`http://127.0.0.1:1234/api/v1/clan/${id}`);
     return response.json();
   }
 
