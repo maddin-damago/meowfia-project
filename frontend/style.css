@@ -157,11 +157,11 @@ a {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 
 .member-card {
-  width: 80%;
+  width: 100%;
   border: none;
   display: flex;
   align-items: center;
@@ -176,7 +176,6 @@ a {
 .member-card img {
   background-color: rgba(7, 85, 59, 0.453);
   width: 70px;
-  padding: 7px;
   border-radius: 50%;
   border: 1px solid black;
 }

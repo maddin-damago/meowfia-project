@@ -68,6 +68,36 @@ export async function getClanById(id) {
   }
 }
 
+export async function getRankByIdR(id) {
+  const conn = await pool.getConnection();
+
+  try {
+    const res = await conn.query(
+      `SELECT rank_name FROM cat_rank WHERE id = ${id}`,
+    );
+    const [rows] = res;
+    return rows;
+  } catch (error) {
+    throw error;
+  } finally {
+    conn.release();
+  }
+}
+
+export async function getCatByIdR(id) {
+  const conn = await pool.getConnection();
+
+  try {
+    const res = await conn.query(`SELECT * FROM katze WHERE id = ${id}`);
+    const [rows] = res;
+    return rows;
+  } catch (error) {
+    throw error;
+  } finally {
+    conn.release();
+  }
+}
+
 // POST
 
 export async function createNewCat(cat) {
@@ -108,4 +138,30 @@ export async function createNewClanR(clan, cat) {
   } finally {
     conn.release();
   }
+}
+
+// SET
+
+export async function setGebietsClanR(gebietsId, clanId) {
+  const [result] = await pool.execute(
+    "UPDATE gebiete SET clan_id = ? WHERE id = ?;",
+    [clanId, gebietsId],
+  );
+  return result;
+}
+
+export async function setClanForCatR(catId, clanId) {
+  const [result] = await pool.execute(
+    "UPDATE katze SET clan_id = ? WHERE id = ?;",
+    [clanId, catId],
+  );
+  return result;
+}
+
+export async function updateClanFischeR(newFischeAnzahl, clanId) {
+  const [result] = await pool.execute(
+    "UPDATE clan SET fische = ? WHERE id = ?;",
+    [newFischeAnzahl, clanId],
+  );
+  return result;
 }

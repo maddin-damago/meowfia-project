@@ -7,6 +7,9 @@ import {
   createNewDon,
   createNewClan,
   clanById,
+  setGebietsClan,
+  rankById,
+  setClan,
 } from "../service/service.js";
 
 export async function getCats(req, res) {
@@ -30,6 +33,12 @@ export async function getClanById(req, res) {
   const id = req.params.id;
   const clan = await clanById(id);
   res.status(200).json(clan);
+}
+
+export async function getRankById(req, res) {
+  const id = req.params.id;
+  const rank = await rankById(id);
+  res.status(200).json(rank);
 }
 
 // COOKIES NOM NOM
@@ -68,6 +77,12 @@ export async function createClan(req, res) {
 
 export async function setGebiet(req, res) {
   const id = req.params.id;
-  console.log(id);
-  console.log(req.body.value);
+  const result = await setGebietsClan(id, req.body.value);
+  res.status(201).json(result);
+}
+
+export async function setClanForCat(req, res) {
+  const id = req.params.id;
+  const result = await setClan(id, req.body.value);
+  res.status(201).json(result);
 }

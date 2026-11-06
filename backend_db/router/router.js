@@ -11,12 +11,16 @@ import {
   setGebietCookie,
   setClanCookie,
   setGebiet,
+  getRankById,
+  setClanForCat,
 } from "../controller/controller.js";
 
 export const router = new express.Router();
 
 router.get("/cat", (req, res) => getCats(req, res));
 router.post("/cat", createDon);
+router.put("/cat/:id", (req, res) => setClanForCat(req, res));
+router.get("/rank/:id", getRankById);
 router.get("/clan", (req, res) => getClans(req, res));
 router.get("/clan/set/:id", setClanCookie);
 router.get("/clan/:id", (req, res) => getClanById(req, res));

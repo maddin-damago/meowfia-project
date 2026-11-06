@@ -29,16 +29,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     membersListEl.append(gebietDataContainer);
 
     const cookie = await cookieStore.get("clan");
-    const cookieValue = cookie.value;
 
     gebietDataContainer.addEventListener("click", async () => {
-      await fetch(`http://127.0.0.1:1234/api/v1/gebiete/${gebiete[i].id}`, {
-        method: "PUT",
-        body: JSON.stringify(cookie),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      if (!gebiete[i].clan_id) {
+        await fetch(`http://127.0.0.1:1234/api/v1/gebiete/${gebiete[i].id}`, {
+          method: "PUT",
+          body: JSON.stringify(cookie),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      } else {
+        // Gebietskampf!!
+      }
     });
   }
 });
